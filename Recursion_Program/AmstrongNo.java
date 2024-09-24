@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class  AmstrongNo
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number");
+		int n=sc.nextInt();
+		if(n==Amstrong(n)){
+			System.out.println(n+" is a amstrong no");
+		}
+		else{
+			System.out.println(n+" is not a amstrong no");
+		}
+
+
+
+	}
+	public static int Amstrong(int n){
+		if(n==0)return 0
+					return (int)Math.pow(n%10,3)+Amstrong(n/10);
+	}
+}

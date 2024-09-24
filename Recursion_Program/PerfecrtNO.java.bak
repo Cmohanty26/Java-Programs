@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class PerfecrtNO 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number");
+		int n=sc.nextInt();
+		int sumOfDivisors = perfect(n, n / 2, 0);
+		if(sumOfDivisors==n){
+			System.out.println(n+" is a perfect number");
+		}
+		else{
+			System.out.println(n+" is not a perfect number");
+		}
+	}
+	public static int perfect(int n,int i,int sum){
+		if(n==0) return sum;
+		if(n%i==0) sum+=i;
+		return perfect(n,i-1,sum);
+	}
+}
