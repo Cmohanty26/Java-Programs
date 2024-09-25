@@ -1,0 +1,22 @@
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+class TotalChar 
+{
+	public static void main(String[] args) 
+	{
+		String s="abcdefghi";
+		String exp=".";
+		Pattern p=Pattern.compile(exp);
+		Matcher m=p.matcher(s);
+		int count=0;
+		while(m.find()){
+			count++;
+		}
+		System.out.println("The total char is:"+ count);
+	}
+}
+/*
+input:"abcdefghi";
+output:The total char is:9;
+*/

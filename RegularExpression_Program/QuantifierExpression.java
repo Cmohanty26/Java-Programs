@@ -1,0 +1,25 @@
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+class QuantifierExpression 
+{
+	public static void main(String[] args) 
+	{
+		String s="abababbbaaba";
+		String exp="ab*";
+		Pattern p=Pattern.compile(exp);
+		Matcher m=p.matcher(s);
+		while(m.find()){
+			System.out.println(m.group());
+		}
+	}
+}
+/* 
+input:"abababbbaaba";
+output:
+ab
+ab
+abbb
+a
+ab
+a
+*/

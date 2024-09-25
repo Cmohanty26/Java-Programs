@@ -1,0 +1,21 @@
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+class CountSpecificChar 
+{
+	public static void main(String[] args) 
+	{
+		String s="ababcadefai";
+		String exp="a";
+		Pattern p=Pattern.compile(exp);
+		Matcher m=p.matcher(s);
+		int count=0;
+		while(m.find()){
+			count++;
+		}
+		System.out.println("The count of "+exp+ " is: "+ count);
+	}
+}
+/* 
+input:"ababcadefai";
+output:The count of a is: 4;
+*/
