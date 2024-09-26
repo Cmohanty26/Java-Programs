@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+class SecondMinimumChar {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string:");
+        String s = sc.nextLine();
+        
+        char[] c = s.toCharArray();
+        int minCount = c.length;
+        int secondMinCount = c.length;
+        char minChar = ' ';
+        char secondMinChar = ' ';
+
+        for (int i = 0; i < c.length; i++) {
+            int count = 1;
+
+            if (c[i] == '\u0000') {
+                continue;
+            }
+
+           
+            for (int j = i + 1; j < c.length; j++) {
+                if (c[i] == c[j]) {
+                    count++;
+                    c[j] = '\u0000';  
+                }
+            }
+
+           
+            if (count < minCount) {
+                secondMinCount = minCount;
+                secondMinChar = minChar;
+                minCount = count;
+                minChar = c[i];
+            } else if (count < secondMinCount && count > minCount) {
+                secondMinCount = count;
+                secondMinChar = c[i];
+            }
+        }
+
+        System.out.println("Character with the second minimum occurrence is: " + secondMinChar + " = " + secondMinCount);
+    }
+}

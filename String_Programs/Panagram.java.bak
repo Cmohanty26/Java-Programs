@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Panagram 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the string");
+		String s=sc.nextLine();
+		if(isPanagram(s)){
+			System.out.println("The given string is panagram no:");
+		}
+		else{
+			System.out.println("The given string is not a panagram no:");
+		}
+	}
+	public static boolean isPanagram(String s){
+		s=s.toLowerCase();
+		if(s.length()<26){
+			return false;
+		}
+		for(char c='a';c<='z';c++){
+		if(s.indexOf(c)==-1){
+		return false;
+		}
+		}
+		return true;
+	}
+}
