@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Pattern23 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size: ");
+        int size = sc.nextInt();
+        int space = size - 1; // Correct the variable name to "space"
+        
+        for (int i = 1; i <= size; i++) {
+            // Print leading spaces
+            for (int j = 1; j <= space; j++) {
+                System.out.print(" ");
+            }
+            // Print increasing numbers
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            // Print decreasing numbers
+            for (int j = i - 1; j >= 1; j--) {
+                System.out.print(j + " ");
+            }
+            System.out.println(); // Move to the next line after printing the row
+            space--; // Decrease space count for the next row
+        }
+    }
+}
