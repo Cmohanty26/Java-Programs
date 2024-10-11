@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+class HighestPrimeNoRandom {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int n = sc.nextInt();
+        int max = -1; // Default value when no prime digit is found
+        
+        while (n > 0) {
+            int digit = n % 10; // Extract the last digit
+            if (isPrime(digit)) {
+                if (digit > max) {
+                    max = digit; // Update max if the current digit is prime and greater than max
+                }
+            }
+            n = n / 10; // Remove the last digit
+        }
+
+        if (max == -1) {
+            System.out.println("No prime digit found");
+        } else {
+            System.out.println("The highest prime digit is: " + max);
+        }
+        
+        sc.close();
+    }
+
+    // Helper method to check if a digit is prime
+    public static boolean isPrime(int digit) {
+        if (digit <= 1) return false; // Digits 0 and 1 are not prime
+        for (int i = 2; i <= digit / 2; i++) {
+            if (digit % i == 0) return false; // If divisible, it's not prime
+        }
+        return true; // If no divisors found, it's prime
+    }
+}
